@@ -17,12 +17,12 @@ const reducer =(state, action)=>{
     switch(action.type){
         case 'Create':
              return state.concat(action.payload);
-        case 'Complete':
-             return state.map(value=>
-            action.payload.id === value.id ? {...value,complete:!value.complete}: value
-        );
+        case 'Toggle':
+             return state.map(value=> 
+                 action.payload === value.id ? {...value,complete:!value.complete}: value
+                );
         case 'Delete':
-            return state.filter(value => value.id !== action.payload.id);
+            return state.filter(value => value.id !== action.payload);
         default: throw new Error("Reducer Error");
     }
 }

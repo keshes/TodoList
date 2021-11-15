@@ -1,21 +1,23 @@
 import styled from 'styled-components';
-import { useTodoState } from './ContextAPI/TodoContext';
 import TodoInsert from './TodoInsert';
 import TodoItemList from './TodoItemList';
 
-function TodoList(){
-  const TodoList=styled.table`
-background: white;
+const List=styled.table`
+  background: white;
+  border-radius:5px;
+  margin: 0 auto;
+  padding: 0;
+  width: 500px;
+  border-collapse: collapse;
 
 `
-const state=useTodoState();
-console.log(state);
+function TodoList(){
 
     return(
-    <TodoList>
+    <List>
         <TodoInsert/>  
         <TodoItemList/>
-      </TodoList>
+      </List>
       )
 
       
