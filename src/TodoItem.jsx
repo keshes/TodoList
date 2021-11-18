@@ -15,8 +15,6 @@ const Checkbox=styled.input`
 const Delete=styled.div`
     width: 15px;
     height:15px;
-    padding: 0 10px;
-    margin: 0 auto;
     color: #adadad;
     opacity: 0;
     &:hover{
@@ -32,6 +30,12 @@ const ItemBox=styled.tr`
     }
     &>td>p{
         padding-left: 10px;
+    }
+    &>td>s{
+        display: block;
+        padding-left: 10px;
+        margin: 18px 0;
+        color:#a7a7a7;
     }
 `
 const TodoItem=({text, id,complete})=>{
@@ -54,7 +58,7 @@ const TodoItem=({text, id,complete})=>{
             <td width="10px"><Checkbox 
             type="checkbox"  onChange={onToggle} checked={checked}
             /></td>
-            <td><p>{text}</p></td>
+            <td>{complete? <s>{text}</s>:<p>{text}</p> }</td>
             <td><Delete onClick={onDelete}><BsTrashFill/></Delete></td>
         </ItemBox>
     )
