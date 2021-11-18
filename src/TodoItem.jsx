@@ -36,6 +36,7 @@ const ItemBox=styled.tr`
         padding-left: 10px;
         margin: 18px 0;
         color:#a7a7a7;
+        /* 끝 */
     }
 `
 const TodoItem=({text, id,complete})=>{
